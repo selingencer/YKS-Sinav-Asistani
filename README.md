@@ -1,4 +1,5 @@
-# BOZ213 FINAL – YKS SINAV ASİSTANI (AI DESTEKLİ)
+# BOZ213 FINAL – YKS SINAV ASİSTANI (KARAR DESTEK SİSTEMİ)
+
 
 **Ders:** BOZ213 – Nesne Yönelimli Programlama (OOP)
 
@@ -64,62 +65,18 @@ pip install matplotlib scikit-learn
 python main.py
 ```
 
-🏗️ Yazılım Mimarisi ve OOP Prensipler
-Bu proje, Temiz Kod (Clean Code) prensipleri ve Nesne Yönelimli Programlama (OOP) yaklaşımı ile, bakımı kolay ve modüler bir yapıda tasarlanmıştır.
-```
-```
-🔒 Kapsülleme (Encapsulation)
-Sınav sonuçları ve öğrenci bilgileri gibi kritik veriler doğrudan erişime kapatılmıştır. Veri güvenliği için getter ve setter metotları kullanılır.
-```python
-class Ogrenci:
-    def __init__(self, ad, hedef):
-        self.__ad = ad            # Private değişken
-        self.__net_listesi = []   # Dışarıdan doğrudan değiştirilemez
+# Yazılım Mimarisi ve OOP Prensipleri
 
-    def sinav_ekle(self, sonuc):
-        # Veri doğrulama burada yapılır
-        if sonuc > 0:
-            self.__net_listesi.append(sonuc)
-```
-🧩 Soyutlama (Abstraction)
-Veritabanı işlemleri veya analiz algoritmaları arka planda çalışır; kullanıcı sadece basit arayüz fonksiyonlarını görür.
-```python
-class AnalizYoneticisi:
-    def analiz_et(self, veriler):
-        # Karar ağacı algoritmaları burada çalışır
-        # Kullanıcı detayları bilmek zorunda değildir
-        pass
-```
-🧬 Kalıtım (Inheritance)
-Genel bir sınav yapısı oluşturulmuş, TYT ve AYT sınavları bu yapıdan türetilmiştir. Kod tekrarı önlenmiştir.
+Bu projede Nesne Yönelimli Programlama (OOP) prensipleri etkin şekilde kullanılmıştır.
+
+- **Kapsülleme (Encapsulation):** Öğrenci bilgileri ve sınav verileri sınıf yapıları içinde izole edilmiştir.
+- **Kalıtım (Inheritance):** TYT ve AYT sınavları ortak bir sınav yapısından türetilmiştir.
+- **Çok Biçimlilik (Polymorphism):** Farklı sınav türleri aynı metot isimleriyle farklı davranışlar sergileyebilir.
+- **Soyutlama (Abstraction):** Kullanıcı arayüzü, analiz ve veri işlemleri birbirinden ayrılmıştır.
+
+Bu yapı sayesinde proje okunabilir, sürdürülebilir ve geliştirilebilir bir mimariye sahiptir.
 
 
-```python
-class Sinav:
-    def __init__(self, tarih, net):
-        self.tarih = tarih
-        self.net = net
-
-class TytSinavi(Sinav):
-    def __init__(self, tarih, net, turkce_net):
-        super().__init__(tarih, net)
-        self.turkce_net = turkce_net
-```
-🔄 Çok Biçimlilik (Polymorphism)
-
-Farklı sınav türleri (TYT/AYT) için puan hesaplama veya analiz fonksiyonları aynı isimle çağrılır ancak farklı davranır.
-
-Her sınav türü kendi hesaplama yöntemini kullanır
-```python
-sinav1.puan_hesapla()  # TYT katsayılarına göre
-
-sinav2.puan_hesapla()  # AYT katsayılarına göre
-```
-📂 Veri Yapıları ve Algoritmalar
-
-Veri Yapıları: Sınav verilerini tutmak için Listeler, konu eşleştirmeleri için Sözlük (Dictionary) yapıları kullanılmıştır.
-
-Algoritma: Öğrencinin başarısız olduğu konuları belirlemek için Karar Ağacı (Decision Tree) mantığına dayalı kural tabanlı bir algoritma geliştirilmiştir.
 
 📜 Lisans
 Bu proje, Ankara Üniversitesi BOZ213 – Nesne Yönelimli Programlama dersi kapsamında akademik amaçla geliştirilmiştir. Kaynak kodlar eğitim ve inceleme amacıyla açıktır.
