@@ -1,5 +1,5 @@
 # YKS Sınav Asistanı
-
+ Yapay Zekâ Destekli Kişisel Deneme Analizi ve Soru Öneri Sistemi;
 Bu proje, **BOZ213 Nesne Tabanlı Programlama** dersi final projesi olarak geliştirilmiştir. Python dili kullanılarak hazırlanan uygulama, YKS sürecindeki öğrencilerin sınav sonuçlarını analiz etmelerini ve net takibi yapmalarını sağlayan masaüstü tabanlı bir araçtır.
 
 ## Projenin Amacı
